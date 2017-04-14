@@ -1,19 +1,19 @@
 package lab11;
 
 public class SensorView {
-	
+	public static Thread[] sensors = new Thread[8];
+
 	public static void main(String[] args) {
 		
-		Sensor[] sensors = new Sensor[8];
-		Jbutton b = new Jbutton();
+		Jbutton j = new Jbutton();
 		
 		for(int i = 0; i <= 7; ++i)
 		{
-			Sensor t = new Sensor();
+			Thread t = new Thread(new Sensor());
 			sensors[i] = t;
 			if(i < 7)
 			{
-				t.run();
+				t.start();
 			}
 		}
 	}
