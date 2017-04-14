@@ -15,6 +15,7 @@ public class Sensor implements Runnable  {
 			catch(InterruptedException e)
 			{
 				//Thread.
+				System.out.println(this.toString());
 			}
 		}
 	}
