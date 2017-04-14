@@ -103,20 +103,7 @@ public class Jbutton extends JFrame implements ActionListener
         	SensorView.sensors[6].interrupt();
         }
         if (command.equals("b8")) {
-        	try {
-				SensorView.sensors[7].join();
-				/*SensorView.sensors[0].run();
-				SensorView.sensors[1].run();
-				SensorView.sensors[2].run();
-				SensorView.sensors[3].run();
-				SensorView.sensors[4].run();
-				SensorView.sensors[5].run();
-				SensorView.sensors[6].run();*/
-				
-			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+        	System.exit(0);
         }
         
 	}
