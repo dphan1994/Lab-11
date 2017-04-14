@@ -1,5 +1,3 @@
-package lab11;
-
 public class SensorView {
 	public static Thread[] sensors = new Thread[8];
 
@@ -11,10 +9,14 @@ public class SensorView {
 		{
 			Thread t = new Thread(new Sensor());
 			sensors[i] = t;
-			if(i < 7)
-			{
-				t.start();
-			}
+			t.start();
+		}
+		
+		try {
+			sensors[7].join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }
