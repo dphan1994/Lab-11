@@ -79,32 +79,38 @@ public class Jbutton extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
 		String command = e.getActionCommand();
+		
 	  	if (command.equals("b1")) {
-            SensorView.sensors[0].interrupt();
-        }
-        if (command.equals("b2")) {
-        	SensorView.sensors[1].interrupt();
-        }
-        if (command.equals("b3")) {
-        	SensorView.sensors[2].interrupt();
-        }
-        if (command.equals("b4")) {
-        	SensorView.sensors[3].interrupt();
-        }
-        if (command.equals("b5")) {
-        	SensorView.sensors[4].interrupt();
-        }
-        if (command.equals("b6")) {
-        	SensorView.sensors[5].interrupt();
-        }
-        if (command.equals("b7")) {
-        	SensorView.sensors[6].interrupt();
-        }
-        if (command.equals("b8")) {
-        	System.exit(0);
-        }
-        
+            		SensorView.sensors[0].interrupt();
+        	}
+		
+        	if (command.equals("b2")) {
+        		SensorView.sensors[1].interrupt();
+        	}
+		
+        	if (command.equals("b3")) {
+        		SensorView.sensors[2].interrupt();
+        	}
+		
+        	if (command.equals("b4")) {
+        		SensorView.sensors[3].interrupt();
+        	}
+		
+        	if (command.equals("b5")) {
+        		SensorView.sensors[4].interrupt();
+        	}
+		
+        	if (command.equals("b6")) {
+        		SensorView.sensors[5].interrupt();
+        	}
+		
+        	if (command.equals("b7")) {
+        		SensorView.sensors[6].interrupt();
+        	}
+		
+        	if (command.equals("b8")) {
+        		System.exit(0);
+        	}
 	}
 }
