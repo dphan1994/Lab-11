@@ -6,18 +6,18 @@ public class Sensor implements Runnable  {
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		while(RUN)
-		{
-			try
-			{
+		while(RUN) {
+			
+			try {
+				
 				Thread.sleep(5000);
 			}
-			catch(InterruptedException e)
-			{
+			
+			catch(InterruptedException e) {
 				//Thread.
 				System.out.println(this.toString());
+				System.out.println(System.nanoTime());
 			}
 		}
 	}
-
 }
