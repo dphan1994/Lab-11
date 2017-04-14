@@ -1,4 +1,4 @@
-package lab11;
+
 
 import java.awt.BorderLayout;
 import java.awt.Button;
@@ -36,6 +36,7 @@ import javax.swing.DefaultListModel;
 
 public class Jbutton extends JFrame implements ActionListener
 {
+	SensorView sv = new SensorView();
 	public Jbutton()
 	{
 		
@@ -43,21 +44,21 @@ public class Jbutton extends JFrame implements ActionListener
 	    setLocation(100, 100);
 		JFrame f = new JFrame("Lab 11");
 		//f.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		JButton b1 = new JButton("1");
+		JButton b1 = new JButton("b1");
 		b1.addActionListener(this);
-		JButton b2 = new JButton("2");
+		JButton b2 = new JButton("b2");
 		b2.addActionListener(this);
-		JButton b3 = new JButton("3");
+		JButton b3 = new JButton("b3");
 		b3.addActionListener(this);
-		JButton b4 = new JButton("4");
+		JButton b4 = new JButton("b4");
 		b4.addActionListener(this);
-		JButton b5 = new JButton("5");
+		JButton b5 = new JButton("b5");
 		b5.addActionListener(this);
-		JButton b6 = new JButton("6");
+		JButton b6 = new JButton("b6");
 		b6.addActionListener(this);
-		JButton b7 = new JButton("7");
+		JButton b7 = new JButton("b7");
 		b7.addActionListener(this);
-		JButton b8 = new JButton("8");
+		JButton b8 = new JButton("b8");
 		b8.addActionListener(this);
 		
 		
@@ -81,28 +82,41 @@ public class Jbutton extends JFrame implements ActionListener
 		
 		String command = e.getActionCommand();
 	  	if (command.equals("b1")) {
-            
+            SensorView.sensors[0].interrupt();
         }
         if (command.equals("b2")) {
-            
+        	SensorView.sensors[1].interrupt();
         }
         if (command.equals("b3")) {
-            
+        	SensorView.sensors[2].interrupt();
         }
         if (command.equals("b4")) {
-            
+        	SensorView.sensors[3].interrupt();
         }
         if (command.equals("b5")) {
-            
+        	SensorView.sensors[4].interrupt();
         }
         if (command.equals("b6")) {
-           ;
+        	SensorView.sensors[5].interrupt();
         }
         if (command.equals("b7")) {
-          
+        	SensorView.sensors[6].interrupt();
         }
         if (command.equals("b8")) {
-        	System.exit(0);
+        	try {
+				SensorView.sensors[7].join();
+				/*SensorView.sensors[0].run();
+				SensorView.sensors[1].run();
+				SensorView.sensors[2].run();
+				SensorView.sensors[3].run();
+				SensorView.sensors[4].run();
+				SensorView.sensors[5].run();
+				SensorView.sensors[6].run();*/
+				
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
         }
         
 	}
